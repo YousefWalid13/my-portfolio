@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------
+   Utilities
+---------------------------------- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ----------------------------------
+   Background Animation (Black / Silver)
+---------------------------------- */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* الخلفية الأساسية */
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    hsl(0 0% 5%),
+    /* أسود */ hsl(0 0% 8%),
+    /* أسود أفتح */ hsl(0 0% 12%),
+    /* رمادي غامق */ hsl(0 0% 7%) /* أسود */
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 30s ease infinite;
+}
+
+/* طبقة فضي خفيفة */
+.animated-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, hsl(0 0% 100% / 0.04), transparent 40%),
+    radial-gradient(circle at 80% 70%, hsl(0 0% 100% / 0.03), transparent 45%);
+  pointer-events: none;
+}
+.card {
+  backdrop-filter: blur(8px);
+  background: hsl(0 0% 100% / 0.03);
+}
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("/noise.png");
+  background-repeat: repeat;
+  opacity: 0.06; /* لو حاسسها واضحة زوّد/قلّل بين 0.04 – 0.07 */
+}
+
+/* ----------------------------------
+   Theme Variables (Black / Silver)
+---------------------------------- */
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 75%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 80%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 80%;
+
+    --primary: 0 0% 90%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 75%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 85%;
+
+    --radius: 0.5rem;
+    --heading: 0 0% 92%;
+  }
+}
+
+/* ----------------------------------
+   Base Styles
+---------------------------------- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground animated-bg;
+  }
+
+  ::selection {
+    background-color: hsl(0 0% 100% / 0.15);
+    color: hsl(0 0% 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
