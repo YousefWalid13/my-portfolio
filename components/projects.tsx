@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -6,16 +6,35 @@ const projects = [
     role: "Back-End .NET Developer",
     description:
       "Full-featured backend system built from scratch using Clean Architecture. Features booking workflows (Create, Confirm, Cancel), Hangfire background jobs, AI-powered travel package generation with Gemini, JWT authentication, and production-ready scalable design.",
-    tech: ["ASP.NET Core (.NET 9)", "EF Core", "MSSQL", "Hangfire", "JWT", "Clean Architecture", "AI (Gemini)", "Serilog"],
+    tech: [
+      "ASP.NET Core (.NET 9)",
+      "EF Core",
+      "MSSQL",
+      "Hangfire",
+      "JWT",
+      "Clean Architecture",
+      "AI (Gemini)",
+      "Serilog",
+    ],
     github: "https://github.com/Fas7ny/Fas7nyProject",
   },
   {
-    title: "Library Management API",
-    role: "Back-End Developer",
+    title: "Vion – Real-Time Chat Platform",
+    type: "Personal Project | 2025",
+    role: "Full-Stack Developer",
     description:
-      "Clean architecture API using Generic Repository and Unit of Work patterns. Features core modules for Books, Authors, Categories, Purchases, and Borrowing with JWT-based authentication, role-based authorization, pagination, sorting, filtering, and CI/CD with GitHub Actions.",
-    tech: ["ASP.NET Core Web API", "EF Core", "SQL Server", "Identity", "JWT", "C#"],
-    github: "https://github.com/YousefWalid13/LibraryMangementApiForPruchesAndBorrowing",
+      "Developed a full-stack real-time chat platform using ASP.NET Core (.NET 10) and React. Implemented SignalR WebSocket communication with JWT-secured connections, room lifecycle management (Create, Join, Leave, Destroy), real-time synchronization, typing indicators, online user tracking, and concurrent message broadcasting. Persisted data using PostgreSQL (Neon Cloud) and deployed backend to Fly.io and frontend to Vercel.",
+    tech: [
+      "ASP.NET Core (.NET 10)",
+      "SignalR",
+      "React",
+      "PostgreSQL",
+      "JWT",
+      "Fly.io",
+      "Vercel",
+    ],
+    github: "https://github.com/YousefWalid13/Real-Time-Chat-App",
+    live: "https://real-time-chat-app-sigma-ten.vercel.app/",
   },
   {
     title: "ShoppingCart MVC Project",
@@ -26,20 +45,30 @@ const projects = [
     github: "https://github.com/YousefWalid13/ShoppingCart",
   },
   {
-    title: "Cashier Desktop Application (POS)",
-    role: "Desktop Application Developer",
+    title: "Library Management API",
+    role: "Back-End Developer",
     description:
-      "Point-of-sale desktop application for sales, products, and invoice management. Built with MVVM architecture for maintainable and scalable design, featuring authentication, role-based access control, and reliable data validation.",
-    tech: [".NET (WPF / WinForms)", "EF Core", "SQL Server", "MVVM"],
-    github: "https://github.com/YousefWalid13/Cashier",
+      "Clean architecture API using Generic Repository and Unit of Work patterns. Features core modules for Books, Authors, Categories, Purchases, and Borrowing with JWT-based authentication, role-based authorization, pagination, sorting, filtering, and CI/CD with GitHub Actions.",
+    tech: [
+      "ASP.NET Core Web API",
+      "EF Core",
+      "SQL Server",
+      "Identity",
+      "JWT",
+      "C#",
+    ],
+    github:
+      "https://github.com/YousefWalid13/LibraryMangementApiForPruchesAndBorrowing",
   },
-]
+];
 
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-24">
       <div className="sticky top-0 z-20 -mx-6 mb-4 bg-background/75 px-6 py-5 backdrop-blur lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-heading lg:sr-only">Projects</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-heading lg:sr-only">
+          Projects
+        </h2>
       </div>
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
@@ -76,5 +105,5 @@ export default function Projects() {
         ))}
       </div>
     </section>
-  )
+  );
 }
