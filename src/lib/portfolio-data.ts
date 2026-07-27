@@ -2,6 +2,8 @@ import vibeCover from "@/assets/vibe.png";
 import fas7nyCover from "@/assets/fas7ny.png";
 import vionCover from "@/assets/vion.png";
 import vionVideo from "@/assets/vion_smol.mp4";
+import joxCover from "@/assets/JOX.jpeg";
+import joxVideo from "@/assets/JOX.mp4";
 export const portfolio = {
   name: "Yousef Walid",
   monogram: "YW",
@@ -119,6 +121,28 @@ export const portfolio = {
       live: "https://real-time-chat-app-sigma-ten.vercel.app/",
       cover: vionCover,
       video: vionVideo,
+    },
+    {
+      title: "JOX DB — Storage Engine",
+      role: "Backend Software Engineer",
+
+      description:
+        "A custom database storage engine built from scratch using ASP.NET Core, implementing LSM-Tree concepts including MemTable, SSTables, Write-Ahead Logging (WAL), Compaction, Bloom Filters, Sparse Indexes, and a Next.js dashboard for real-time monitoring. Deployed with Fly.io and Vercel.",
+
+      tags: [
+        "ASP.NET Core (.NET 10)",
+        "LSM Tree",
+        "WAL",
+        "SSTables",
+        "Next.js",
+        "Fly.io",
+        "Vercel",
+      ],
+
+      github: "https://github.com/YousefWalid13/Joex_Db_Engine",
+      live: "https://joex-db-engine-6rry.vercel.app/dashboard",
+      cover: joxCover,
+      video: joxVideo,
     },
   ],
 
